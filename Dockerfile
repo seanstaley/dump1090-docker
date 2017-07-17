@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM arm32v7/ubuntu:latest
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   git \
@@ -30,4 +30,4 @@ RUN make
 
 EXPOSE 8080 30001 30002 30003 30004 30005
 
-ENTRYPOINT ./dump1090 --net
+ENTRYPOINT ./dump1090 --interactive --net
